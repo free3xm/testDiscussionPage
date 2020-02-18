@@ -1,0 +1,18 @@
+.Header {
+  width: 100vw;
+  height: 80px;
+  background: #2196f3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 200px;
+  overflow: hidden;
+}
+.logo {
+  width: 80px;
+}
+.comments{
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}

@@ -1,0 +1,57 @@
+.Comment {
+  width: 100%;
+  box-shadow: 2px 2px 4px 2px #ccc;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #212121;
+}
+.Comment_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 2px solid #9e9e9e;
+}
+.User {
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.Comment_body {
+  padding: 5px 0;
+  font-size: 16px;
+  word-wrap: break-word;
+  height: auto;
+}
+
+.replies {
+  width: 100%;
+  padding-left: 20px;
+}
+.UserInfo,
+.CommentInfoWrapepr,
+.ButtonsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ButtonsWrapper {
+  margin-right: 10px;
+}
+.CommentButton,
+.ReplyButton {
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: #757575;
+}
+.ReplyButton {
+  margin-bottom: 5px;
+  color: #1976d2;
+  font-size: 23px;
+}
+.CommentState {
+  font-size: 15px;
+}

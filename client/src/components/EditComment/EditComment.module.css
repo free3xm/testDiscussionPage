@@ -1,0 +1,29 @@
+.EditComment {
+}
+.Comment_text {
+  padding: 5px 0;
+  border: none;
+  resize: none;
+  border-bottom: 1px solid #212121;
+  width: 100%;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  min-height: 100%;
+  height: 80px;
+}
+.Button_save,
+.Button_cancel {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 25px;
+  color: #9e9e9e;
+  transition: 0.4s;
+}
+
+.Button_save:hover {
+  color: #4caf50;
+}
+.Button_cancel:hover {
+  color: #f44336;
+}

@@ -1,0 +1,14 @@
+.Discussion {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background: #efefef;
+}
+.CommentsWrapper {
+  width: 60%;
+  background: #fff;
+  box-shadow: 2px 2px 4px 2px #ccc;
+  padding: 40px 20px;
+  border-radius: 5px;
+}

@@ -1,0 +1,47 @@
+.Form {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 4px 2px #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+.name {
+  width: 100%;
+}
+.text {
+  width: 100%;
+  resize: none;
+  height: 100px;
+}
+.name,
+.text {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #212121;
+}
+.name::placeholder,
+.text::placeholder {
+  font-family: "Sriracha";
+}
+.Comment_Button {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  padding: 7px 15px;
+  border: none;
+  cursor: pointer;
+  background: #1976d2;
+  border-radius: 2px;
+  margin-top: 5px;
+  transition: 0.5s;
+}
+.Comment_Button:disabled {
+  background: #ccc;
+  color: #000;
+  cursor: default;
+}
+.Comment_Button:enabled:active {
+  transform: scale(0.95);
+}

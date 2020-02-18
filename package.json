@@ -1,7 +1,7 @@
 {
   "name": "eliftech-school",
   "version": "1.0.0",
-  "description": "",
+  "description": "test for ElifTech",
   "main": "app.js",
   "scripts": {
     "client": "npm run start --prefix client",
@@ -13,8 +13,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
-    "mongoose": "^5.9.1",
-    "mongoose-auto-increment": "^5.0.1"
+    "mongoose": "^5.9.1"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",

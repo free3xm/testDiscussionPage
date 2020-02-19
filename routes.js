@@ -42,6 +42,7 @@ router.delete("/comments", async (req, res) => {
 });
 router.put("/comments", async (req, res) => {
   try {
+    console.log(req.body)
     const _id = req.body._id;
     req.body.updateAt = new Date();
     await Comment.findOneAndUpdate({ _id }, { ...req.body });
@@ -53,7 +54,7 @@ router.put("/comments", async (req, res) => {
 });
 router.put("/comments/state", async (req, res) => {
   try {
-    const { _id, state } = req.body._id;
+    const { _id, state } = req.body;
     await Comment.findOneAndUpdate({ _id }, { state });
     const comments = await Comment.find({});
     res.status(200).json(comments);

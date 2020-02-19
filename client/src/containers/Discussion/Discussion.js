@@ -74,7 +74,7 @@ function mapDispatchToProps(dispatch) {
     createComment: data => dispatch(createComment(data)),
     loadComments: () => dispatch(loadComments()),
     deleteComment: id => dispatch(deleteComment(id)),
-    updateComment: data => dispatch(updateComment(data)),
+    updateComment: (data, state) => dispatch(updateComment(data, state)),
     clearErr: () => dispatch(clearErr())
   };
 }

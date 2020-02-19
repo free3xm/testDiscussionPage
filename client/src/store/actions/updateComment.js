@@ -1,11 +1,10 @@
 import { successLoadComents, errorLoadComments } from "./loadComments";
+import config from "../../config";
 
 export function updateComment(body, state) {
   return async dispatch => {
     try {
-      const url = `${process.env.REACT_APP_API_URL}/api/comments${
-        state ? "/state" : ""
-      }`;
+      const url = `${config.url}/api/comments${state ? state : ""}`;
       const res = await fetch(url, {
         method: "PUT",
         headers: {

@@ -1,9 +1,10 @@
 import { successLoadComents, errorLoadComments } from "./loadComments";
+import config from "../../config";
 
 export default function deleteComment(id) {
   return async dispatch => {
     try {
-      const res = await fetch(process.env.REACT_APP_API_URL + "/api/comments", {
+      const res = await fetch(config.url + "/api/comments", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json"

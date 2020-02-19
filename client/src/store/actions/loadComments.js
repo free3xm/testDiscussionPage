@@ -3,12 +3,13 @@ import {
   LOAD_COMMENTS_SUCCESS,
   LOAD_COMMENTS_ERROR
 } from "./ActionTypes";
+import config from "../../config";
 
 export default function loadComments() {
   return async dispatch => {
     try {
       dispatch(startLoadComments());
-      const res = await fetch(process.env.REACT_APP_API_URL + "/api/comments");
+      const res = await fetch(config.url + "/api/comments");
       const data = await res.json();
       if (!res.ok) throw new Error(data.message);
       dispatch(successLoadComents(data));

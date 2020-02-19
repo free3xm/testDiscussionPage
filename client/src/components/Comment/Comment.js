@@ -46,6 +46,8 @@ export default function Comment(props) {
   ) : (
     <p className={cls.Comment_body}>{props.comment.text}</p>
   );
+  console.log(process.env);
+
   return (
     <div className={cls.Comment}>
       <div className={cls.Comment_header}>
@@ -59,10 +61,13 @@ export default function Comment(props) {
             <button
               className={cls.CommentButton}
               onClick={() =>
-                props.updateComment({
-                  _id: props.comment._id,
-                  state: props.comment.state + 1
-                })
+                props.updateComment(
+                  {
+                    _id: props.comment._id,
+                    state: props.comment.state + 1
+                  },
+                  "/state"
+                )
               }
             >
               <i className="fas fa-thumbs-up"></i>
@@ -71,10 +76,13 @@ export default function Comment(props) {
             <button
               className={cls.CommentButton}
               onClick={() =>
-                props.updateComment({
-                  _id: props.comment._id,
-                  state: props.comment.state - 1
-                })
+                props.updateComment(
+                  {
+                    _id: props.comment._id,
+                    state: props.comment.state - 1
+                  },
+                  "/state"
+                )
               }
             >
               <i className="fas fa-thumbs-down"></i>

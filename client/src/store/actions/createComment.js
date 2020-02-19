@@ -1,10 +1,11 @@
 import { CREATE_COMMENT_SUCCESS } from "./ActionTypes";
 import { errorLoadComments } from "./loadComments";
+import config from "../../config";
 
 export default function createComment(body) {
   return async dispatch => {
     try {
-      const res = await fetch(process.env.REACT_APP_API_URL + "/api/comments", {
+      const res = await fetch(config.url + "/api/comments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -12,7 +13,7 @@ export default function createComment(body) {
         body: JSON.stringify(body)
       });
       const data = await res.json();
-      if(!res.ok) throw new Error(data.message)
+      if (!res.ok) throw new Error(data.message);
       dispatch(createCommentSuccess(data, body.user));
     } catch (err) {
       dispatch(errorLoadComments(err.message));
@@ -27,4 +28,3 @@ function createCommentSuccess(data, author) {
     author
   };
 }
-

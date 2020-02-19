@@ -7,7 +7,8 @@ import loadComments from "../../store/actions/loadComments";
 import Comment from "../../components/Comment/Comment";
 import deleteComment from "../../store/actions/deleteComment";
 import { updateComment } from "../../store/actions/updateComment";
-import Modal from "../../components/Modal/Modal";
+import Modal from "../../components/UI/Modal/Modal";
+import Loader from "../../components/UI/Loader/Loader";
 import clearErr from "../../store/actions/clearErr";
 
 function Discussion(props) {
@@ -29,22 +30,25 @@ function Discussion(props) {
       />
     );
   }
-  const content = props.loading
-    ? null
-    : props.comments.map(comment => {
-        if (comment.replies) return null;
-        const replies = props.comments.map(filterComment =>
-          filterComment.replies === comment._id
-            ? renderComment(filterComment, null, comment.user)
-            : null
-        );
-        return renderComment(comment, replies);
-      });
+  const content = props.loading ? (
+    <Loader />
+  ) : (
+    props.comments.map(comment => {
+      if (comment.replies) return null;
+      const replies = props.comments.map(filterComment =>
+        filterComment.replies === comment._id
+          ? renderComment(filterComment, null, comment.user)
+          : null
+      );
+      return renderComment(comment, replies);
+    })
+  );
   const err = props.err ? <Modal text={props.err} /> : null;
   const timer = setTimeout(() => {
-    props.clearErr()
-    clearTimeout(timer)
-  },3000)
+    props.clearErr();
+    clearTimeout(timer);
+  }, 3000);
+
   return (
     <main className={cls.Discussion}>
       {err}

@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "https://aqueous-springs-34380.herokuapp.com/static/css/main.b43f3687.chunk.css",
+    "main.js": "https://aqueous-springs-34380.herokuapp.com/static/js/main.08114a5c.chunk.js",
+    "main.js.map": "https://aqueous-springs-34380.herokuapp.com/static/js/main.08114a5c.chunk.js.map",
+    "runtime-main.js": "https://aqueous-springs-34380.herokuapp.com/static/js/runtime-main.5c9a07af.js",
+    "runtime-main.js.map": "https://aqueous-springs-34380.herokuapp.com/static/js/runtime-main.5c9a07af.js.map",
+    "static/js/2.de301e8e.chunk.js": "https://aqueous-springs-34380.herokuapp.com/static/js/2.de301e8e.chunk.js",
+    "static/js/2.de301e8e.chunk.js.map": "https://aqueous-springs-34380.herokuapp.com/static/js/2.de301e8e.chunk.js.map",
+    "index.html": "https://aqueous-springs-34380.herokuapp.com/index.html",
+    "precache-manifest.77795ceadf9f3453349b1129c5943753.js": "https://aqueous-springs-34380.herokuapp.com/precache-manifest.77795ceadf9f3453349b1129c5943753.js",
+    "service-worker.js": "https://aqueous-springs-34380.herokuapp.com/service-worker.js",
+    "static/css/main.b43f3687.chunk.css.map": "https://aqueous-springs-34380.herokuapp.com/static/css/main.b43f3687.chunk.css.map",
+    "static/js/2.de301e8e.chunk.js.LICENSE.txt": "https://aqueous-springs-34380.herokuapp.com/static/js/2.de301e8e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5c9a07af.js",
+    "static/js/2.de301e8e.chunk.js",
+    "static/css/main.b43f3687.chunk.css",
+    "static/js/main.08114a5c.chunk.js"
+  ]
+}

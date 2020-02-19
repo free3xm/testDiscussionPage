@@ -4,6 +4,7 @@
   "description": "test for ElifTech",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "client": "npm run start --prefix client",
     "server": "nodemon app.js",
     "dev": "concurrently \" npm run client\" \" npm run server\""

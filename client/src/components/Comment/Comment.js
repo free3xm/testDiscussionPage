@@ -46,7 +46,6 @@ export default function Comment(props) {
   ) : (
     <p className={cls.Comment_body}>{props.comment.text}</p>
   );
-  console.log(process.env);
 
   return (
     <div className={cls.Comment}>

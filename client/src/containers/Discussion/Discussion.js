@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import cls from "./Discussion.module.css";
 import CommentForm from "../../components/CommentForm/CommentForm";
-import { connect } from "react-redux";
 import createComment from "../../store/actions/createComment";
 import loadComments from "../../store/actions/loadComments";
 import Comment from "../../components/Comment/Comment";

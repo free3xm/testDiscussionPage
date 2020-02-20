@@ -42,7 +42,6 @@ router.delete("/comments", async (req, res) => {
 });
 router.put("/comments", async (req, res) => {
   try {
-    console.log(req.body)
     const _id = req.body._id;
     req.body.updateAt = new Date();
     await Comment.findOneAndUpdate({ _id }, { ...req.body });

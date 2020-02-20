@@ -28,7 +28,7 @@ export default function CommentForm(props) {
     props.formHandler({
       user: data.user.value,
       text: data.text.value,
-      parentId: props.id
+      reply: props.id
     });
     setData(userState);
     props.showForm && props.showForm(false);

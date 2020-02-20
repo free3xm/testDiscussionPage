@@ -7,7 +7,7 @@ const schema = new Schema({
   text: { type: String },
   created: { type: Date },
   updateAt: { type: Date },
-  replies: { type: String }
+  reply: { type: String, default: "" }
 });
 
 module.exports = model("Comment", schema);

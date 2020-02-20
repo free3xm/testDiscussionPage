@@ -11,44 +11,49 @@ import Modal from "../../components/UI/Modal/Modal";
 import Loader from "../../components/UI/Loader/Loader";
 import clearErr from "../../store/actions/clearErr";
 
+function createComments(list, Component, props) {
+  const map = {};
+  const roots = [];
+  const components = list.map(e => (
+    <Component comment={{ ...e }} key={e._id} replies={[]} {...props} />
+  ));
+
+  components.forEach((e, i) => {
+    map[e.props.comment._id] = i;
+  });
+
+  components.forEach(e => {
+    if (e.props.comment.reply) {
+      e.props.comment.replyTo =
+        components[map[e.props.comment.reply]].props.comment.user;
+      components[map[e.props.comment.reply]].props.replies.push(e);
+    } else roots.push(e);
+  });
+  return roots;
+}
+
 function Discussion(props) {
   useEffect(() => {
     props.loadComments();
   }, []);
 
-  function renderComment(comment, replies, replyTo) {
-    return (
-      <Comment
-        key={comment._id}
-        comment={comment}
-        formHandler={props.createComment}
-        replies={replies}
-        replyTo={replyTo}
-        deleteHandler={props.deleteComment}
-        updateComment={props.updateComment}
-        author={props.author}
-      />
-    );
-  }
   const content = props.loading ? (
     <Loader />
   ) : (
-    props.comments.map(comment => {
-      if (comment.replies) return null;
-      const replies = props.comments.map(filterComment =>
-        filterComment.replies === comment._id
-          ? renderComment(filterComment, null, comment.user)
-          : null
-      );
-      return renderComment(comment, replies);
+    createComments(props.comments, Comment, {
+      formHandler: props.createComment,
+      deleteHandler: props.deleteComment,
+      updateComment: props.updateComment,
+      author: props.author
     })
   );
+
   const err = props.err ? <Modal text={props.err} /> : null;
   const timer = setTimeout(() => {
     props.clearErr();
     clearTimeout(timer);
   }, 3000);
-
+  
   return (
     <main className={cls.Discussion}>
       {err}

@@ -7,8 +7,8 @@ export default function Comment(props) {
   const [show, setShow] = useState(false);
   const [edit, setEdit] = useState(false);
 
-  const replyTo = props.replyTo ? (
-    <p className={cls.replyTo}>reply to: {props.replyTo}</p>
+  const replyTo = props.comment.replyTo ? (
+    <p className={cls.replyTo}>reply to: {props.comment.replyTo}</p>
   ) : null;
 
   const form = show ? (
@@ -21,8 +21,8 @@ export default function Comment(props) {
   ) : null;
 
   const updatedAt = props.comment.updateAt ? (
-    <p>
-      this comment was edited at&nbsp;
+    <p className={cls.updateAt}>
+      edited&nbsp;
       {new Date(props.comment.updateAt).toLocaleString()}
     </p>
   ) : null;
@@ -46,7 +46,7 @@ export default function Comment(props) {
   ) : (
     <p className={cls.Comment_body}>{props.comment.text}</p>
   );
-
+  
   return (
     <div className={cls.Comment}>
       <div className={cls.Comment_header}>
